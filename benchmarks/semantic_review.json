@@ -1,0 +1,1202 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-13T15:22:34+08:00",
+  "source_sha256": "2729a66f1522a2bfaab298b62d8d3963b17fab259da4687fa195c942cb109132",
+  "reviewer": "Codex, GPT-6-based assistant; exact model and reasoning_effort not exposed",
+  "review_mode": "single_assistant_authored_non_blinded_purposive_sample",
+  "external_judge_api_calls": 0,
+  "selection_rule": "12 fixed source anchors; choose earliest exported leaf whose original source contains the anchor offset; read full selected chunk without parent/neighbor expansion; duplicate chunk ratings must agree",
+  "dimension_weights": {
+    "coherence": 0.4,
+    "completeness": 0.4,
+    "context": 0.2
+  },
+  "anchors": [
+    {
+      "id": "A01",
+      "label": "qualification linkage",
+      "needle": "A passage may fit a size limit while separating a definition from its qualification.",
+      "offset": 1145,
+      "line": 11
+    },
+    {
+      "id": "A02",
+      "label": "repeated instruction identity",
+      "needle": "Consider two instructions that both begin with",
+      "offset": 3663,
+      "line": 31
+    },
+    {
+      "id": "A03",
+      "label": "budget versus qualification",
+      "needle": "A smaller budget produces narrower passages but may force a qualification into a separate result.",
+      "offset": 4688,
+      "line": 37
+    },
+    {
+      "id": "A04",
+      "label": "configuration example",
+      "needle": "\"overlap\": 100,",
+      "offset": 5224,
+      "line": 44
+    },
+    {
+      "id": "A05",
+      "label": "topic comparison",
+      "needle": "Research notebook maintenance concerns hypotheses, experimental conditions, uncertainty, and competing interpretations.",
+      "offset": 7033,
+      "line": 59
+    },
+    {
+      "id": "A06",
+      "label": "table interpretation",
+      "needle": "| AST-04 | Hierarchical leaf nodes | 41 | 500 | 6 |",
+      "offset": 9240,
+      "line": 76
+    },
+    {
+      "id": "A07",
+      "label": "heading context",
+      "needle": "## 9. Media References and Time Ranges",
+      "offset": 9783,
+      "line": 82
+    },
+    {
+      "id": "A08",
+      "label": "timestamp limitation",
+      "needle": "Splitting a transcript into two strings does not provide new word-level timestamps.",
+      "offset": 10520,
+      "line": 86
+    },
+    {
+      "id": "A09",
+      "label": "untrusted data qualification",
+      "needle": "It is a test sentence, not an instruction to the benchmark runner or the reader.",
+      "offset": 11519,
+      "line": 92
+    },
+    {
+      "id": "A10",
+      "label": "fallback qualification",
+      "needle": "An explicitly selected fallback can produce local recursive chunks, but the result must record that fallback rather than presenting it as a successful model decision.",
+      "offset": 12216,
+      "line": 96
+    },
+    {
+      "id": "A11",
+      "label": "retrieval limitation",
+      "needle": "Those outcomes require additional evidence gathered through an evaluation designed for the actual application.",
+      "offset": 13498,
+      "line": 110
+    },
+    {
+      "id": "A12",
+      "label": "reference identity",
+      "needle": "Neighboring Sentence Windows in Simulated Retrieval Collections",
+      "offset": 14713,
+      "line": 118
+    }
+  ],
+  "exports_sha256": {
+    "fixed": "d4f40a58bf41dc8f558c00f318f8354f8516eb4b69c7026cb80ab5c16c225962",
+    "recursive": "455825a6238d4eaee6f974c000b7d80c0ed44abf59d58a675089685d39f34be1",
+    "hierarchical": "1b3c62311c1cdfd491cbb3f6567f0cce5dfb45b73cda51a35e97f9275a0e764e",
+    "semantic": "becd722150f36371a3b7ebd803a5f89e93ae7c5bcd023464b7deaa52a643c44c",
+    "modality": "bb18285683dc526423b4ea51a9997e904860be043a2dd5bd7c07e1c988729a1a",
+    "agentic": "2eabf78970966055733ea1d0a70ca872a3f484a4fc9534c8ff039ed8f3015dc5"
+  },
+  "reviews": {
+    "fixed": [
+      {
+        "anchor": "A01",
+        "chunk_index": 2,
+        "chunk_id": "3f65104deb9588d76b11801bef4485941d956ff53f4da69e72b5ef82a897cd8c",
+        "text_sha256": "83295584ad022bd9ff10141b01b01501721ec4c1ceaeb59adf34e3cbc5398523",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "评估说明与部门介绍混在一块，首尾均为句子碎片；主要评估例子仍可理解。",
+        "rationale_en": "Evaluation framing and department descriptions share a chunk; both edges are sentence fragments, while the central examples remain understandable.",
+        "leading_excerpt": "divided into useful retrieval units.\n\nThe evaluation does not establish that one chunking strategy is universa",
+        "trailing_excerpt": " the same term can have different meanings. In an operations document, a window means an allowed maintenance i"
+      },
+      {
+        "anchor": "A02",
+        "chunk_index": 4,
+        "chunk_id": "a9ea85368ea670fc2ef64d131911f83ff2a649fc152396956666f28559dd0a91",
+        "text_sha256": "8a54dedbd6a0ffa05dd4151d649cb72632c71321d75142c4d8e3d150866844be",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 2,
+          "context": 2
+        },
+        "rationale_zh": "残缺表格行与来源身份段落混合，重复指令例子在引号中被截断，且表头缺失。",
+        "rationale_en": "Partial table rows mix with source identity; the repeated-instruction example stops inside a quotation and table headers are missing.",
+        "leading_excerpt": "ks | Operations | 126 | Timeline and commentary | Mixed sample |\n| Supplier comparisons | Procurement | 47 | T",
+        "trailing_excerpt": "ontains repeated warnings and repeated examples.\n\nConsider two instructions that both begin with “Record the o"
+      },
+      {
+        "anchor": "A03",
+        "chunk_index": 6,
+        "chunk_id": "3069bc9643e172c7cfe5725b03b40d29a2971d7aa4fac7350575d7aa32433158",
+        "text_sha256": "958acc543861b842b5c118062dfe54d65679b4c1476b1492a5435f7c8887cf10",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "预算说明和完整代码可读，但又进入 recursive 主题，首尾句子均截断。",
+        "rationale_en": "Budget framing and the full code example are readable, but recursive discussion starts before the chunk ends, with fragments at both edges.",
+        "leading_excerpt": "ld exaggerate how much unique material was retained.\n\nA larger budget reduces the number of chunks but places ",
+        "trailing_excerpt": "nsidering smaller ones. In this fixture, a paragraph boundary often separates an explanation from the next sub"
+      },
+      {
+        "anchor": "A04",
+        "chunk_index": 6,
+        "chunk_id": "3069bc9643e172c7cfe5725b03b40d29a2971d7aa4fac7350575d7aa32433158",
+        "text_sha256": "958acc543861b842b5c118062dfe54d65679b4c1476b1492a5435f7c8887cf10",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "与 A03 是同一块：完整代码和限制说明仍在，两个边缘句子不完整。",
+        "rationale_en": "Same chunk as A03: the complete code and its caveat survive, but both boundary sentences are incomplete.",
+        "leading_excerpt": "ld exaggerate how much unique material was retained.\n\nA larger budget reduces the number of chunks but places ",
+        "trailing_excerpt": "nsidering smaller ones. In this fixture, a paragraph boundary often separates an explanation from the next sub"
+      },
+      {
+        "anchor": "A05",
+        "chunk_index": 8,
+        "chunk_id": "7a2807eb7ca06930a5a522f2bb2cd945d93bf0b9536cd3d73f97968cfb269c7e",
+        "text_sha256": "0aceaaa4d8c812f7969d344cd038e72468ebc49ccc8e1b6a4a036c4eb9b1dfc2",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 3,
+          "context": 3
+        },
+        "rationale_zh": "主要围绕语义窗口及领域对比，但开头有前节碎片，末尾截掉不宣称检索提升的限定。",
+        "rationale_en": "The main theme is semantic windows and the domain comparison, but a prior-section fragment remains and the retrieval-improvement caveat is cut at the end.",
+        "leading_excerpt": "ion remain present.\n\n## 6. Semantic Boundaries and Topic Changes\n\nThe imaginary semantic experiment compares r",
+        "trailing_excerpt": "s this transition to inspect whether a chunk spans two subjects or breaks between them. It does not label eith"
+      },
+      {
+        "anchor": "A06",
+        "chunk_index": 11,
+        "chunk_id": "ed028e45c364c0151e53712319683709a330d74e2c0fb7b09879450dd5268785",
+        "text_sha256": "b5422f08754ab04bc55ea02655fb5cab3e52829f259603fef882d3519a8ffc63",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 2,
+          "context": 2
+        },
+        "rationale_zh": "数值表、表格解析说明和媒体介绍混合；表头从中间开始，媒体介绍也截断。",
+        "rationale_en": "Numeric rows, parsing discussion and media introduction mix; the header begins midway and the media introduction is also truncated.",
+        "leading_excerpt": " block | Review notes |\n| --- | --- | ---: | ---: | ---: |\n| AST-01 | Fixed character windows | 18 | 1000 | 7 ",
+        "trailing_excerpt": "a video scene summary. The diagram is identified as `asset://aster/layout-diagram.png`. Its fictional caption "
+      },
+      {
+        "anchor": "A07",
+        "chunk_index": 11,
+        "chunk_id": "ed028e45c364c0151e53712319683709a330d74e2c0fb7b09879450dd5268785",
+        "text_sha256": "b5422f08754ab04bc55ea02655fb5cab3e52829f259603fef882d3519a8ffc63",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 2,
+          "context": 2
+        },
+        "rationale_zh": "与 A06 是同一块：标题完整但所属媒体段落末尾截断，数值列缺完整表头。",
+        "rationale_en": "Same chunk as A06: the heading survives, but the media paragraph is truncated and numeric columns lack a full header.",
+        "leading_excerpt": " block | Review notes |\n| --- | --- | ---: | ---: | ---: |\n| AST-01 | Fixed character windows | 18 | 1000 | 7 ",
+        "trailing_excerpt": "a video scene summary. The diagram is identified as `asset://aster/layout-diagram.png`. Its fictional caption "
+      },
+      {
+        "anchor": "A08",
+        "chunk_index": 12,
+        "chunk_id": "feefa736fb6621fd9b250bab2bea0549f0976ac8d7ed98f72fabd91cda942bf6",
+        "text_sha256": "a187f531ee923ddd51f7341b2e3b663c7ee9c137518f24258fd4027fca27974a",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "媒体时间范围与限制说明大部分连贯，但开头残缺，末尾混入被截断的 agent 决策句。",
+        "rationale_en": "Media bounds and limitations mostly cohere, but the leading fragment and a truncated agent-decision sentence weaken the unit.",
+        "leading_excerpt": "ene summary. The diagram is identified as `asset://aster/layout-diagram.png`. Its fictional caption describes ",
+        "trailing_excerpt": "ecisions and Untrusted Source Text\n\nThe fictional agent receives numbered source units and returns proposed gr"
+      },
+      {
+        "anchor": "A09",
+        "chunk_index": 13,
+        "chunk_id": "268935b26469b2d2df7f9f4cd4deb536ce8dffa1fd1da9e8656af3bb016a5ace",
+        "text_sha256": "44a5a41780fe7a4faf5f224cb0a2ceb1bd7ec0f9d64b80b7881a90e2a712daee",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "边界决策约束、恶意示例和“非指令”限定同块，只有标题边缘片段影响完整性。",
+        "rationale_en": "Boundary constraints, the hostile example and its noninstruction qualification stay together; only heading-edge fragments reduce completeness.",
+        "leading_excerpt": "nd Untrusted Source Text\n\nThe fictional agent receives numbered source units and returns proposed group ending",
+        "trailing_excerpt": "s presence tests separation between source material and the instructions controlling the grouping task.\n\n## 11"
+      },
+      {
+        "anchor": "A10",
+        "chunk_index": 14,
+        "chunk_id": "bbc262d5e7011c5ed7e68b16a41b87bf4fdac4b13471c2f1d58a27f63c3b1967",
+        "text_sha256": "6208b10ba873bf607f7adb77ab2f3320bb55ae9fc4e05791cfbf242141b74e76",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "失败与回退说明完整，随后混入检查表并截断第二行，开头亦有前节碎片。",
+        "rationale_en": "Failure and fallback explanation survives, but an inspection table starts and cuts its second row; a prior-section fragment leads the chunk.",
+        "leading_excerpt": " tests separation between source material and the instructions controlling the grouping task.\n\n## 11. Failure ",
+        "trailing_excerpt": "repeated instructions have different meanings? | Source identity | Position and purpose |\n| Q-02 | What does t"
+      },
+      {
+        "anchor": "A11",
+        "chunk_index": 15,
+        "chunk_id": "cacec2ec5cf55a71e39b100988aa50be574ac8381bf26bd8796f58104e7d578b",
+        "text_sha256": "7510fab4824df8ebaa0c84719e727c238b39f439ecc288b254fd0ac6af3ac474",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 3
+        },
+        "rationale_zh": "无表头的检查表尾部与结论混合，首行和后续实验句均截断。",
+        "rationale_en": "Headerless inspection rows mix with conclusions; the first row and following experiment sentence are truncated.",
+        "leading_excerpt": "nstructions have different meanings? | Source identity | Position and purpose |\n| Q-02 | What does the final n",
+        "trailing_excerpt": "ered through an evaluation designed for the actual application.\n\nA subsequent fictional experiment could intro"
+      },
+      {
+        "anchor": "A12",
+        "chunk_index": 17,
+        "chunk_id": "23d2759510d43631036daec6387f69bcb70a97001b07b1fd38b71147fd3b556b",
+        "text_sha256": "bea7e3bc9356a6603468b794df09c60cc88aba68cc215a358fbc09fd6312a5ff",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "同属 bibliography，R2–R4 完整，但开头仅剩 R1 链接尾部，缺列表标题。",
+        "rationale_en": "The bibliography theme is focused and R2–R4 are complete, but the chunk starts with R1’s link tail and lacks its section heading.",
+        "leading_excerpt": "ceholder: <https://research.example.invalid/aster/R01>.\n- **[R2]** Elena Moss. *Stable Coordinates for Repeate",
+        "trailing_excerpt": "nds*. Fictional Multimodal Archive Memo 03, 2025. Placeholder: <https://research.example.invalid/aster/R04>.\n\n"
+      }
+    ],
+    "recursive": [
+      {
+        "anchor": "A01",
+        "chunk_index": 2,
+        "chunk_id": "ff5eee28211e7cbd9e0e91a573f8f1a6de501c1ff9b461a1aa3f844a373c5404",
+        "text_sha256": "d77a0d6b11d8ed590d52c7b5163bfa1adbb663a1243b71a272eb31fc21c82de8",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "评估例子和限制完整，开头 overlap 句子碎片及尾部下一节标题形成轻微杂项。",
+        "rationale_en": "Evaluation examples and caveats are complete; the overlap prefix and next-section heading add minor extraneous material.",
+        "leading_excerpt": "cribes a simulated evaluation of how those materials might be divided into useful retrieval units.\n\nThe evalua",
+        "trailing_excerpt": "ed. These are test conditions, rather than findings about a deployed system [R1].\n\n## 2. Archive Composition\n\n"
+      },
+      {
+        "anchor": "A02",
+        "chunk_index": 7,
+        "chunk_id": "68ab7623326715889aa7b0d8553d2fcd0c0b06a62cf850d0969357b594fed4de",
+        "text_sha256": "3a212c9c3446ca02f7c0a84c73aee66e94c700138525e841da409a0d1c8a6cb2",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "重复指令的角色及版本限定完整；开头 overlap 碎片与尾部下一节标题不完整。",
+        "rationale_en": "Instruction roles and version qualification remain together; the overlap prefix and trailing next-section heading are incomplete.",
+        "leading_excerpt": "st occurrence, because the archive intentionally contains repeated warnings and repeated examples.\n\nConsider t",
+        "trailing_excerpt": "ing that earlier coordinates still identify the same passage [R2].\n\n## 4. Fixed Budgets and Repeated Context\n\n"
+      },
+      {
+        "anchor": "A03",
+        "chunk_index": 8,
+        "chunk_id": "a1937c85450835b6bc0d076f68dc1db10307e3bb87ebadd0393e6ae2de9e8ae5",
+        "text_sha256": "80a87731643147db0101d2e05ae764cbe63e2eb5dbf3f1372a7c5baf079daf41",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "预算与重叠说明完整，开头保留前节残句，主要解释可独立理解。",
+        "rationale_en": "Budget and overlap explanations are complete; a prior-section overlap fragment remains, but the central argument stands alone.",
+        "leading_excerpt": "arlier coordinates still identify the same passage [R2].\n\n## 4. Fixed Budgets and Repeated Context\n\nThe fictio",
+        "trailing_excerpt": "ing any retrieval outcome. It keeps these mechanical measurements separate from claims about answer quality.\n\n"
+      },
+      {
+        "anchor": "A04",
+        "chunk_index": 9,
+        "chunk_id": "01cdf4ada79bc49c2daa1b4dedbbdf1fd1ea6cb5726f69c36e9a7a126d21ee55",
+        "text_sha256": "149cbfcb5dd772ff80443b0cd22be6f5c3189b1149078b725f3628136b1c1e44",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "完整配置及虚构示例限定保留，并附相邻 recursive 解释；开头为 overlap 碎片。",
+        "rationale_en": "The full configuration and fictional-example caveat survive alongside neighboring recursive discussion; the opening is an overlap fragment.",
+        "leading_excerpt": "trieval outcome. It keeps these mechanical measurements separate from claims about answer quality.\n\nThe follow",
+        "trailing_excerpt": " no suitable separator, the implementation still needs a way to make progress without discarding characters.\n\n"
+      },
+      {
+        "anchor": "A05",
+        "chunk_index": 12,
+        "chunk_id": "4a04451bec150dba554a73b79656e3404e0979b5205e33ce64cabc2d32e75808",
+        "text_sha256": "587dcb898de4b1e479718ccf71628a17da02dd1cea9e75c0df5cb73b79558b35",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "领域对比与不宣称检索提升的限定完整，首段 overlap 和下节标题产生轻微边缘残留。",
+        "rationale_en": "The comparison and no-retrieval-improvement qualification survive; an overlap prefix and following heading create minor edge remnants.",
+        "leading_excerpt": "se a boundary selected from isolated sentences may differ from one selected using broader context.\n\nA delibera",
+        "trailing_excerpt": "is logic, but cannot establish genuine semantic understanding [R3].\n\n## 7. Hierarchies and Context Expansion\n\n"
+      },
+      {
+        "anchor": "A06",
+        "chunk_index": 15,
+        "chunk_id": "15a1850a378928777538c01ccbbdb3a7513fbe8901530544c3ad843b48951ece",
+        "text_sha256": "ae59e8c05b90251319df6592cd2f72cb592a7440f527b6f2ba6ffcce6ba1c354",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "表格、完整表头和最后数值列的计数含义均在；仅开头有 hierarchy overlap 残句。",
+        "rationale_en": "The table, full header and final-column count definition remain together; only a hierarchy overlap fragment leads the chunk.",
+        "leading_excerpt": "with missing characters is still a failed result.\n\n## 8. Tables, Headers, and Interpretive Context\n\nThe next t",
+        "trailing_excerpt": "|\n| AST-05 | Parsed table row groups | 12 | 973 | 4 |\n| AST-06 | Agent-selected boundaries | 19 | 991 | 11 |\n\n"
+      },
+      {
+        "anchor": "A07",
+        "chunk_index": 16,
+        "chunk_id": "465c63ff7457e9dee9862839371623671f2883ffc187e2d553261b2a101360d4",
+        "text_sha256": "68578bd0f567ee8d7b7cab5730c522c073375cd7026f1b390a5844c1a81de500",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 2
+        },
+        "rationale_zh": "部分表格尾行缺表头，和解析说明、孤立媒体标题混合，需邻块补上下文。",
+        "rationale_en": "Partial table tails lack headers and mix with parsing prose and a detached media heading, requiring neighboring context.",
+        "leading_excerpt": " | Parsed table row groups | 12 | 973 | 4 |\n| AST-06 | Agent-selected boundaries | 19 | 991 | 11 |\n\nThis raw M",
+        "trailing_excerpt": "from being misreported as proof that table structure was understood.\n\n## 9. Media References and Time Ranges\n\n"
+      },
+      {
+        "anchor": "A08",
+        "chunk_index": 18,
+        "chunk_id": "f1ae7b2b86118639aa96f30b5bd8689252e4fdd8cb18433a3f7284e1d212a62c",
+        "text_sha256": "10282d11bd897b0344d117e23ebcc8e668dbe24590dc91fc4c79abfade1e61a8",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "媒体限制说明完整，开头视频句缺主语部分，尾部 agent 标题没有正文。",
+        "rationale_en": "The media limitations survive, but the initial video sentence loses its subject portion and the agent heading has no body.",
+        "leading_excerpt": "ent covers seconds 31.0 through 39.0 and describes an operator placing a label on a sample folder.\n\nThese desc",
+        "trailing_excerpt": "and time bounds instead of inventing finer locations [R4].\n\n## 10. Agent Decisions and Untrusted Source Text\n\n"
+      },
+      {
+        "anchor": "A09",
+        "chunk_index": 20,
+        "chunk_id": "8be9cd7126ce7a92dce30e37561739696285f55b718dc359020a16e807ba24ac",
+        "text_sha256": "ffecd8b6dffa7ebb1ebb5a04c43b17d2368812756ef2e1a7d2378b75e8f94488",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "恶意示例及非指令限定完整；前节 overlap 碎片与后节标题造成边缘杂项。",
+        "rationale_en": "The hostile example and noninstruction caveat remain together; an overlap prefix and following heading add edge noise.",
+        "leading_excerpt": "exceed the output budget, in which case the application subdivides it at existing unit boundaries.\n\nThe follow",
+        "trailing_excerpt": "urce material and the instructions controlling the grouping task.\n\n## 11. Failure Cases and Review Questions\n\n"
+      },
+      {
+        "anchor": "A10",
+        "chunk_index": 21,
+        "chunk_id": "60c1edffd911e65e1b6724715fbce6be4211c1f452c656f951944b78fd68b8f5",
+        "text_sha256": "9a44f35b6eefb8257b15d2918c9136abbac46705782a9b18e08cbe26d67c64b5",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "故障、重试、回退限定和检查题免责声明完整，前缀仅是 overlap 残句。",
+        "rationale_en": "Failures, retries, fallback qualifications and the question disclaimer are complete; the prefix is an overlap fragment.",
+        "leading_excerpt": "ial and the instructions controlling the grouping task.\n\n## 11. Failure Cases and Review Questions\n\nThe fictio",
+        "trailing_excerpt": "ing this fixture. They are not a labeled retrieval benchmark and do not define acceptable generated answers.\n\n"
+      },
+      {
+        "anchor": "A11",
+        "chunk_index": 23,
+        "chunk_id": "c054313017378185bb54fe2221a215cbb13d0079794b39c2e76a45bac7e2a37b",
+        "text_sha256": "206167e246a37dfbd79008e6eff91136b3229650a2edf1f9a897f256006369b7",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 3
+        },
+        "rationale_zh": "结论完整但前面有无表头的半条检查表行，数值／结构关联需邻块。",
+        "rationale_en": "The conclusion is complete but follows a headerless half-row from the inspection table, whose interpretation requires a neighbor.",
+        "leading_excerpt": "idence? | References | Explicitly fabricated entries |\n\n## 12. Interpretation and Next Experiments\n\nThe imagin",
+        "trailing_excerpt": "ose outcomes require additional evidence gathered through an evaluation designed for the actual application.\n\n"
+      },
+      {
+        "anchor": "A12",
+        "chunk_index": 25,
+        "chunk_id": "06e1657c18ab5d791be4dac4c53dfe93c715df5a00888e48dfeed9b244ba08c6",
+        "text_sha256": "21b8aaa04e1d59dd104aec9b969b6bb8a104a1a4dd9447d94c3bdeb59614b289",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "虚构引用标题和四条完整条目同块，开头残句是前节 overlap。",
+        "rationale_en": "The fictional-reference heading and all four complete entries stay together; a preceding-section overlap fragment leads the chunk.",
+        "leading_excerpt": "tions that must never be mistaken for external support.\n\n## References — All Entries Are Fictional\n\n- **[R1]**",
+        "trailing_excerpt": "nds*. Fictional Multimodal Archive Memo 03, 2025. Placeholder: <https://research.example.invalid/aster/R04>.\n\n"
+      }
+    ],
+    "hierarchical": [
+      {
+        "anchor": "A01",
+        "chunk_index": 7,
+        "chunk_id": "2953fab34277d7681924357e9830ecdcb2689468ecd789f4d1f631762293a2a0",
+        "text_sha256": "7a9c9ac36e9327571da709091b7c923f0fa6efe925e5e7e6fe7b85dcb6ca710a",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "评估局限及三个例子主题集中，最后“这些是测试条件”的来源限定在邻块。",
+        "rationale_en": "The evaluation limitations and examples are focused, but the final test-condition framing is in a neighbor.",
+        "leading_excerpt": "The evaluation does not establish that one chunking strategy is universally superior. Instead, it creates situ",
+        "trailing_excerpt": "t a value. A retrieved sentence may sound authoritative even though its reference is deliberately fabricated. "
+      },
+      {
+        "anchor": "A02",
+        "chunk_index": 22,
+        "chunk_id": "0e344a21f1077f7498c3a8428c9614c9c423e21bef94ec68256e24f44c580eba",
+        "text_sha256": "1ee1d612f7b4647ee0dac67328170df94a82988f6b6a43bfd8063625417e51dc",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "重复指令的两种角色、来源定位与版本限定全部同块且句子完整。",
+        "rationale_en": "Both instruction roles, source-position meaning and version qualification stay together in complete sentences.",
+        "leading_excerpt": "Consider two instructions that both begin with “Record the observed state.” The first belongs to a preparation",
+        "trailing_excerpt": "s a different version, rather than pretending that earlier coordinates still identify the same passage [R2].\n\n"
+      },
+      {
+        "anchor": "A03",
+        "chunk_index": 25,
+        "chunk_id": "7f7a28ccb82aca44ff5bbf7cf6f74e09b2ab1f79ec8f6d1dbc1f66e76670276b",
+        "text_sha256": "79711b893efa01e062cb4cc92f0f839f2cdb8b0e1993855d3c6d0311521347cf",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "大小预算的取舍及先机械检查后检索评估的限定完整，主题单一。",
+        "rationale_en": "Budget tradeoffs and the mechanical-before-retrieval qualification are complete and focused.",
+        "leading_excerpt": "A larger budget reduces the number of chunks but places more topics inside each unit. A smaller budget produce",
+        "trailing_excerpt": "ing any retrieval outcome. It keeps these mechanical measurements separate from claims about answer quality.\n\n"
+      },
+      {
+        "anchor": "A04",
+        "chunk_index": 28,
+        "chunk_id": "0e2db5da1d1951cc60e028ebe69e49c848ba8341d835e7b4a280ce4aba94ece4",
+        "text_sha256": "4f967be310a6a098fd7c3e440ed5c9f5887ce402b59ea7656c5033549ea702de",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "完整代码及虚构基线说明同块，尾部附无正文的下一节标题。",
+        "rationale_en": "The full code and fictional-baseline framing stay together; a following heading has no body.",
+        "leading_excerpt": "The following configuration is a fictional example of a character-based baseline, not a recommended setting fo",
+        "trailing_excerpt": "\": 1000,\n    \"overlap\": 100,\n    \"unit\": \"characters\",\n}\n```\n\n## 5. Recursive Structure and Local Exceptions\n\n"
+      },
+      {
+        "anchor": "A05",
+        "chunk_index": 37,
+        "chunk_id": "1378fcd2f79a87bf22ab89d997b72f8998f2fa2736fc83307f0ee6fcb74c34c0",
+        "text_sha256": "9f84e51fc5134377c788c3273089f6c2e1f619de9c3e09e1e507aca704c98033",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "领域对比与实验目的完整，但不宣称检索提升及 stub 能力限制在邻块。",
+        "rationale_en": "The domain comparison and experiment purpose survive, but no-retrieval-lift and stub-capability qualifications are in a neighbor.",
+        "leading_excerpt": "A deliberate topic transition appears here. Supplier catalog maintenance concerns names, identifiers, delivery",
+        "trailing_excerpt": "ictional evaluator uses this transition to inspect whether a chunk spans two subjects or breaks between them. "
+      },
+      {
+        "anchor": "A06",
+        "chunk_index": 46,
+        "chunk_id": "dc818a6f9b7d80f9761f76c2631a66a100ac9eef582a142392bcf25cf954ad64",
+        "text_sha256": "9423249a68f3600b0accb5ab4b7b20b035cb602e0622e6c9b2364cd9167f74ca",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 3
+        },
+        "rationale_zh": "完整表头与六行同块，主题集中；“Review notes”其实是虚构计数的解释在父级／邻块。",
+        "rationale_en": "The header and six rows are complete and focused; the explanation that “Review notes” denotes a fictional count is outside the leaf.",
+        "leading_excerpt": "| Scenario ID | Strategy under inspection | Fictional chunk count | Fictional largest block | Review notes |\n|",
+        "trailing_excerpt": "|\n| AST-05 | Parsed table row groups | 12 | 973 | 4 |\n| AST-06 | Agent-selected boundaries | 19 | 991 | 11 |\n\n"
+      },
+      {
+        "anchor": "A07",
+        "chunk_index": 48,
+        "chunk_id": "744d84c69fb81bb709b4eaf60194b4c32785ff8807f781a608517773bcaa7aa7",
+        "text_sha256": "8b4844c8812ee1f9e57df2c641690446e2e9e291037e8cc7f3d6f2bd083585c2",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "原始文本与解析表格的区别可读，但没有对应表格，并附孤立媒体标题。",
+        "rationale_en": "The raw-versus-parsed distinction is readable, but the corresponding table is absent and a detached media heading follows.",
+        "leading_excerpt": "This raw Markdown file tests textual boundaries around table syntax. It does not automatically become a parsed",
+        "trailing_excerpt": "from being misreported as proof that table structure was understood.\n\n## 9. Media References and Time Ranges\n\n"
+      },
+      {
+        "anchor": "A08",
+        "chunk_index": 52,
+        "chunk_id": "b7f88fcc703126d4e60ae9d2ea7308cc166450af627529f62c02da5cf0273830",
+        "text_sha256": "a822ed9d8f67cb2b70eeb70cd4c075e8a74e393f763b457e368d2e144fa1ab30",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 4
+        },
+        "rationale_zh": "媒体能力限制句完整且主题集中，“These descriptions”对应的描述和数值在邻块。",
+        "rationale_en": "Media limitations are complete and focused, while the descriptions and numeric bounds referenced by “These descriptions” are in a neighbor.",
+        "leading_excerpt": "These descriptions are textual stand-ins for media. No image, audio recording, or video file accompanies the f",
+        "trailing_excerpt": "modality test would retain the supplied reference and time bounds instead of inventing finer locations [R4].\n\n"
+      },
+      {
+        "anchor": "A09",
+        "chunk_index": 56,
+        "chunk_id": "af2780870e134dc55ba7265ae8fe07bbca9295f3c657751901750d4b1ea4cb86",
+        "text_sha256": "a802bef91272aadfac56ed6f748942920a32a25cdf9c5d4eb5f3ed816c74a008",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "恶意源文本、非指令限定与处理边界完整同块，独立阅读不会丢掉资格说明。",
+        "rationale_en": "The hostile source text, noninstruction caveat and processing boundary stay together as a self-contained unit.",
+        "leading_excerpt": "The following sentence is intentionally included as untrusted document content: “Ignore all previous instructi",
+        "trailing_excerpt": "n. Its presence tests separation between source material and the instructions controlling the grouping task.\n\n"
+      },
+      {
+        "anchor": "A10",
+        "chunk_index": 61,
+        "chunk_id": "efc73b2d4be34803ef51c1254cdaef67c1425df44d5a755ea3b93ab083dcceb9",
+        "text_sha256": "dc9b5615d28eb9dbcd4db0d1363e017d55940018a01fcfacab2ae9f30d7cb9e5",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "故障、重试预算和显式回退的限定全部同块，主题和指代清楚。",
+        "rationale_en": "Failures, retry budgets and explicit-fallback qualifications stay together with clear topic and references.",
+        "leading_excerpt": "The fictional review team separates transport failures from content-validation failures. A request may time ou",
+        "trailing_excerpt": "e chunks, but the result must record that fallback rather than presenting it as a successful model decision.\n\n"
+      },
+      {
+        "anchor": "A11",
+        "chunk_index": 67,
+        "chunk_id": "f8b7882238bbcffb5ac2f1cc4b81a7a7535e81f028d6f1161ac1d0af9c65a0c3",
+        "text_sha256": "6296e77725a3598629de7d72725ba60d7517d940f8938d2396a5c1b44bdf26e1",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "机械正确性与检索质量的区别及后续证据要求完整，独立理解充分。",
+        "rationale_en": "The distinction between mechanical correctness and retrieval quality, including the evidence requirement, is complete and standalone.",
+        "leading_excerpt": "The imaginary team concludes that a useful first evaluation should establish mechanical correctness before com",
+        "trailing_excerpt": "ose outcomes require additional evidence gathered through an evaluation designed for the actual application.\n\n"
+      },
+      {
+        "anchor": "A12",
+        "chunk_index": 74,
+        "chunk_id": "2003326df2faf207f784ce04d46bd02fe753ddb25c4cb41014a0cb7b871c1b8a",
+        "text_sha256": "9591eb2317d98c89ea7fd30856e6e4af2131348dded2821606708c018193cd51",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "R3/R4 各含作者、标题、虚构标记和链接，bibliography 子集可独立识别。",
+        "rationale_en": "R3/R4 each retain author, title, fictional designation and link, making this bibliography subset independently identifiable.",
+        "leading_excerpt": "- **[R3]** Theo Finch and Sora Ellis. *Neighboring Sentence Windows in Simulated Retrieval Collections*. Ficti",
+        "trailing_excerpt": "nds*. Fictional Multimodal Archive Memo 03, 2025. Placeholder: <https://research.example.invalid/aster/R04>.\n\n"
+      }
+    ],
+    "semantic": [
+      {
+        "anchor": "A01",
+        "chunk_index": 3,
+        "chunk_id": "d7f848fab70d2d831893407719d4cbac630b94f2c206fe7e3f562d6a7c83236e",
+        "text_sha256": "f016968d0811b4ab0de43916cf8f8e21be11ba4f1153095883092e4fde7559b6",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "测试例子、部门介绍和下一段开场混合，句子虽完整但段落论述未收束。",
+        "rationale_en": "Test examples, department descriptions and a next-paragraph opener mix; sentences survive but the discourse is unfinished.",
+        "leading_excerpt": "A passage may fit a size limit while separating a definition from its qualification. A table may remain readab",
+        "trailing_excerpt": "the neighboring sentences used to form a local representation.\n\nDocuments also vary in their internal rhythm. "
+      },
+      {
+        "anchor": "A02",
+        "chunk_index": 8,
+        "chunk_id": "1bce34dcfaf0e63eab299b8e47b72bfe0eea18ae5bd901570b5d3e531b094332",
+        "text_sha256": "7a3c45e790177b24327344b3f7b5a0378644b301a1f6be2c780f234da38fec79",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "重复指令例子与来源限定完整，尾部转入仅一句的 fixed 基线介绍。",
+        "rationale_en": "The repeated-instruction example and source qualification survive, but the tail switches to a one-sentence fixed-baseline introduction.",
+        "leading_excerpt": "Repeated phrases must not be located by searching for their first occurrence, because the archive intentionall",
+        "trailing_excerpt": "ets and Repeated Context\n\nThe fictional baseline uses a fixed character budget and a small amount of overlap. "
+      },
+      {
+        "anchor": "A03",
+        "chunk_index": 9,
+        "chunk_id": "9572e7a6eba243388c7ecbc3691bec5da5b7fe1d4e8bf31f2c10c7f9e842b426",
+        "text_sha256": "e7a158356505b06bc4170fad6c0545c3ace202754fb053e1a79bb82227da9b68",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 3
+        },
+        "rationale_zh": "预算与重叠主题集中，但开头“This”指代的基线在前块。",
+        "rationale_en": "Budget and overlap content is focused, but the baseline referred to by the opening “This” is in the preceding chunk.",
+        "leading_excerpt": "This makes output sizes easy to inspect, but it can place a boundary inside a sentence or a table row. Overlap",
+        "trailing_excerpt": "ing any retrieval outcome. It keeps these mechanical measurements separate from claims about answer quality.\n\n"
+      },
+      {
+        "anchor": "A04",
+        "chunk_index": 11,
+        "chunk_id": "aa85dca994f148acef30436dd905fbb367efce0f10bded25613f581a1d0b7282",
+        "text_sha256": "4d16ada1badc103bfaddfc7980c81cfd34436dc74d56cdec215c0498afeb0473",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 2,
+          "context": 2
+        },
+        "rationale_zh": "仅保留 baseline 字典开头及两个字段；unit、闭括号、完整代码块和虚构示例限定缺失。",
+        "rationale_en": "Only the dictionary opening and two fields remain; unit, closing brace, full code fence and fictional-example framing are missing.",
+        "leading_excerpt": "baseline = {\n    \"chunk_size\": 1000,\n    \"overlap\": 100,\n",
+        "trailing_excerpt": "baseline = {\n    \"chunk_size\": 1000,\n    \"overlap\": 100,\n"
+      },
+      {
+        "anchor": "A05",
+        "chunk_index": 13,
+        "chunk_id": "3fdb5566b0f37e6c863f052560b831c37c7140b6c2aee032607854156e964fdf",
+        "text_sha256": "3de958b1227c62d5c7c09505be288fe446bb65cd489d322d30ef3f79cb8350be",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "语义窗口说明与领域例子相关，但首句来自前节，后续对比含义和检索限制不在块内。",
+        "rationale_en": "Semantic windows and the example relate, but a prior-section sentence leads and the interpretation/retrieval qualification is outside the chunk.",
+        "leading_excerpt": "The evaluator reconstructs the source from returned ranges and checks that original spaces, blank lines, and p",
+        "trailing_excerpt": "otebook maintenance concerns hypotheses, experimental conditions, uncertainty, and competing interpretations. "
+      },
+      {
+        "anchor": "A06",
+        "chunk_index": 19,
+        "chunk_id": "b16b92f336b62828289c9821c484fdce0ec68ce059231ef80c6e2022cb73c868",
+        "text_sha256": "23894058bb057f582529306c6036944e670728dd5a96306b37673737a3451c48",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 2
+        },
+        "rationale_zh": "无表头的数值行、解析说明和媒体介绍混合；行完整但列含义不可独立确定。",
+        "rationale_en": "Headerless numeric rows, parsing prose and media introduction mix; rows survive but column meanings cannot be determined standalone.",
+        "leading_excerpt": "| AST-01 | Fixed character windows | 18 | 1000 | 7 |\n| AST-02 | Recursive boundaries | 22 | 946 | 5 |\n| AST-03",
+        "trailing_excerpt": "d as `asset://aster/layout-diagram.png`. Its fictional caption describes storage shelves and review stations. "
+      },
+      {
+        "anchor": "A07",
+        "chunk_index": 19,
+        "chunk_id": "b16b92f336b62828289c9821c484fdce0ec68ce059231ef80c6e2022cb73c868",
+        "text_sha256": "23894058bb057f582529306c6036944e670728dd5a96306b37673737a3451c48",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 3,
+          "context": 2
+        },
+        "rationale_zh": "与 A06 是同一块：标题带部分媒体介绍，但同块无表头数值行缺必要上下文。",
+        "rationale_en": "Same chunk as A06: the heading has a media introduction, but headerless numeric rows still lack necessary context.",
+        "leading_excerpt": "| AST-01 | Fixed character windows | 18 | 1000 | 7 |\n| AST-02 | Recursive boundaries | 22 | 946 | 5 |\n| AST-03",
+        "trailing_excerpt": "d as `asset://aster/layout-diagram.png`. Its fictional caption describes storage shelves and review stations. "
+      },
+      {
+        "anchor": "A08",
+        "chunk_index": 20,
+        "chunk_id": "198e1e0e06cbdc03c8df0df01449837ff5a64fe97eea7c36d4e86a81f211b288",
+        "text_sha256": "d7c1b2b10f99560fa4049c98c621025c3bf169995cf2d3047c2d9e3a3f12ecb9",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "媒体时间和能力限定完整，但尾部又开启 agent 决策且验证规则在邻块。",
+        "rationale_en": "Media bounds and limitations survive, but the tail opens agent decisions while their validation rules lie outside.",
+        "leading_excerpt": "The audio segment covers seconds 12.0 through 18.5 and contains a spoken reminder to verify the current source",
+        "trailing_excerpt": "osed group endings. It is allowed to choose boundaries, but not to rewrite content or rearrange the document. "
+      },
+      {
+        "anchor": "A09",
+        "chunk_index": 21,
+        "chunk_id": "ff2b64ea646034fc4d35091a5bd1a7d9078dc915c394c884f9228efb70a1d5be",
+        "text_sha256": "565147353bca1a665210af8bd4981a7bd42cde99327790797294026992a89358",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "非指令限定与大部分边界验证同块，开头 endings 指代依赖前块，末尾又转向失败分类。",
+        "rationale_en": "The noninstruction caveat and most validation rules survive; opening “endings” depends on a neighbor and the tail switches to failure categories.",
+        "leading_excerpt": "The application validates the endings before extracting text from the original source. A response that omits a",
+        "trailing_excerpt": "nd Review Questions\n\nThe fictional review team separates transport failures from content-validation failures. "
+      },
+      {
+        "anchor": "A10",
+        "chunk_index": 23,
+        "chunk_id": "a6d93479ecec7ff63bb7b12a69ca137bc8e5dee7fa1ca1ffb871bac9cd9f8be3",
+        "text_sha256": "166677e1f692c23e9329f223c2a79133ca77dbf76524b84e3fa60555bf5392e5",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 3,
+          "context": 4
+        },
+        "rationale_zh": "回退的资格说明完整，但检查题只剩开场，非检索标注集的限定在邻块。",
+        "rationale_en": "The fallback qualification survives, but only the question introduction remains; its nonbenchmark qualification is in a neighbor.",
+        "leading_excerpt": "Retrying consumes the same document-level call budget as an initial attempt. An explicitly selected fallback c",
+        "trailing_excerpt": "s a successful model decision.\n\nThe review questions below are synthetic prompts for inspecting this fixture. "
+      },
+      {
+        "anchor": "A11",
+        "chunk_index": 25,
+        "chunk_id": "3f289f7af8056d3e57f2a9510cedc2c53dbdcbb094e9b01b5a58be1f744dea1d",
+        "text_sha256": "3ca8692c63a185739c3c84da052dd5c2d5bc911ab8da5e2ee16d58f8b128e62e",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 3
+        },
+        "rationale_zh": "限制与后续实验主题一致，开头“They”指代的机械指标在前块。",
+        "rationale_en": "Limitations and proposed experiments cohere, but the mechanical checks referred to by the opening “They” are outside.",
+        "leading_excerpt": "They do not establish relevance, factual accuracy, or user satisfaction. Those outcomes require additional evi",
+        "trailing_excerpt": "uestions involving multiple columns. A third could compare operational costs using a specified model service. "
+      },
+      {
+        "anchor": "A12",
+        "chunk_index": 27,
+        "chunk_id": "4fa616447d60024e92a519052a3998c25d0a7db0d691f163c42ae970a56d7fa1",
+        "text_sha256": "445d4ef8e80307077e6b9e23ccab78a9d790fd646bae3092021534c0d07c5e98",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "四条引用的作者、标题、虚构标记及链接完整同块，可独立识别。",
+        "rationale_en": "All four references retain authors, titles, fictional designations and links in one independently readable chunk.",
+        "leading_excerpt": "- **[R1]** Mira Vale and Jonah Reed. *Boundary Decisions in the Aster Archive*. Fictional Aster Working Paper ",
+        "trailing_excerpt": "nds*. Fictional Multimodal Archive Memo 03, 2025. Placeholder: <https://research.example.invalid/aster/R04>.\n\n"
+      }
+    ],
+    "modality": [
+      {
+        "anchor": "A01",
+        "chunk_index": 2,
+        "chunk_id": "5fc3dd9536184a1f6e992a2a656fda11c3316a8a27f83a28d4d0bd0c91fa7fea",
+        "text_sha256": "51c45f595a9c2e46ae5c6eb451870ffbd60f69bde63885c8e93b855f2dca46ed",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "完整评估例子与限定同块，无截断句，但尾部孤立下一节标题。",
+        "rationale_en": "Full evaluation examples and caveats stay together with no clipped sentence, but a detached next-section heading trails.",
+        "leading_excerpt": "The evaluation does not establish that one chunking strategy is universally superior. Instead, it creates situ",
+        "trailing_excerpt": "ed. These are test conditions, rather than findings about a deployed system [R1].\n\n## 2. Archive Composition\n\n"
+      },
+      {
+        "anchor": "A02",
+        "chunk_index": 6,
+        "chunk_id": "793689606e6ba5cac7431dede20733e26bcaa36305d4d78f3aa35bd1ece11552",
+        "text_sha256": "91021b092ecb4cbbcb44769f8236515a8eabe09b7d2c94e8425a5c0e26df70cd",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "重复指令完整例子与完整重叠解释相邻，跨两个小主题但上下文充分。",
+        "rationale_en": "A full instruction-identity example neighbors a complete overlap explanation; two local themes share the chunk with adequate context.",
+        "leading_excerpt": "Consider two instructions that both begin with “Record the observed state.” The first belongs to a preparation",
+        "trailing_excerpt": "suring coverage: counting every character occurrence would exaggerate how much unique material was retained.\n\n"
+      },
+      {
+        "anchor": "A03",
+        "chunk_index": 7,
+        "chunk_id": "61ab536ff89ef0e8dd420a55ce9308d4fbf84a388d6643ab86374ad864822c19",
+        "text_sha256": "64c858978ed5bdd462b8fd0c676f3c78d7c456febd995744a1cd107c1937f78a",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "预算取舍、虚构配置说明和完整代码同块；下一节标题没有正文。",
+        "rationale_en": "Budget tradeoffs, fictional configuration framing and full code stay together; the next-section heading lacks its body.",
+        "leading_excerpt": "A larger budget reduces the number of chunks but places more topics inside each unit. A smaller budget produce",
+        "trailing_excerpt": "\": 1000,\n    \"overlap\": 100,\n    \"unit\": \"characters\",\n}\n```\n\n## 5. Recursive Structure and Local Exceptions\n\n"
+      },
+      {
+        "anchor": "A04",
+        "chunk_index": 7,
+        "chunk_id": "61ab536ff89ef0e8dd420a55ce9308d4fbf84a388d6643ab86374ad864822c19",
+        "text_sha256": "64c858978ed5bdd462b8fd0c676f3c78d7c456febd995744a1cd107c1937f78a",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "与 A03 是同一块：代码完整且有适用范围限定，尾部下一节标题未配正文。",
+        "rationale_en": "Same chunk as A03: complete code has its scope qualification, while a following heading lacks a body.",
+        "leading_excerpt": "A larger budget reduces the number of chunks but places more topics inside each unit. A smaller budget produce",
+        "trailing_excerpt": "\": 1000,\n    \"overlap\": 100,\n    \"unit\": \"characters\",\n}\n```\n\n## 5. Recursive Structure and Local Exceptions\n\n"
+      },
+      {
+        "anchor": "A05",
+        "chunk_index": 11,
+        "chunk_id": "83f404ae9f41582bdb9fe409f87b227f80bb1aa1f771ce76bcc05693aea78cf6",
+        "text_sha256": "a3ead0bef3fce8f418641e5201e43ec078813e6e52a281d1bc60b9a682e24ad7",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "领域对比、实验限定和 stub 能力说明完整，只附孤立 hierarchy 标题。",
+        "rationale_en": "The comparison, experimental qualifications and stub limitations are complete; only a detached hierarchy heading follows.",
+        "leading_excerpt": "A deliberate topic transition appears here. Supplier catalog maintenance concerns names, identifiers, delivery",
+        "trailing_excerpt": "is logic, but cannot establish genuine semantic understanding [R3].\n\n## 7. Hierarchies and Context Expansion\n\n"
+      },
+      {
+        "anchor": "A06",
+        "chunk_index": 13,
+        "chunk_id": "e03c461ac62ba54c6dee85ac28edb97816f8fe49d511a28544bb5d889d322e9f",
+        "text_sha256": "9ca22a200720d3e861bfd663f4ff83df2c86198481546b7c2c9f53d329a251fb",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "完整表头、六行数据与最后数值列是虚构计数的解释同块。",
+        "rationale_en": "The full header, six rows and explanation that the final numeric column is a fictional count remain together.",
+        "leading_excerpt": "The next table is an invented comparison matrix. Its numeric entries are arbitrary test values, not measured p",
+        "trailing_excerpt": "|\n| AST-05 | Parsed table row groups | 12 | 973 | 4 |\n| AST-06 | Agent-selected boundaries | 19 | 991 | 11 |\n\n"
+      },
+      {
+        "anchor": "A07",
+        "chunk_index": 14,
+        "chunk_id": "68f5f68ae4959cf25796185b14c16a9371a06184f6aa493e56a1e3ff8f0fda76",
+        "text_sha256": "5274d3c785a346968f3ee3310958e373cad6dd72214340464cd0fa0880eb6292",
+        "ratings": {
+          "coherence": 3,
+          "completeness": 5,
+          "context": 4
+        },
+        "rationale_zh": "表格解析区别与媒体描述跨主题混合，但媒体标题、资产引用和时间范围完整。",
+        "rationale_en": "Parsing distinctions and media descriptions cross themes, while the media heading, asset reference and time bounds remain complete.",
+        "leading_excerpt": "This raw Markdown file tests textual boundaries around table syntax. It does not automatically become a parsed",
+        "trailing_excerpt": "video segment covers seconds 31.0 through 39.0 and describes an operator placing a label on a sample folder.\n\n"
+      },
+      {
+        "anchor": "A08",
+        "chunk_index": 15,
+        "chunk_id": "e2e1e0b1e0625c616f21104001c46b5182c5c2643d1eae5b8c9f4921e0387005",
+        "text_sha256": "bedbb65fbf7279d977775aa2171c9c4452225e4cd9fc246e611b147bd43e25f9",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "媒体限制句完整，但“These descriptions”的具体描述在前块，尾部 agent 标题孤立。",
+        "rationale_en": "Media limitations survive, but the descriptions referred to by “These descriptions” precede the chunk and an agent heading trails alone.",
+        "leading_excerpt": "These descriptions are textual stand-ins for media. No image, audio recording, or video file accompanies the f",
+        "trailing_excerpt": "and time bounds instead of inventing finer locations [R4].\n\n## 10. Agent Decisions and Untrusted Source Text\n\n"
+      },
+      {
+        "anchor": "A09",
+        "chunk_index": 16,
+        "chunk_id": "537baba2a9ac47266978ac00fc14a9ab90330fecbed3398355aa316b11e90473",
+        "text_sha256": "4a2efabf78caeb8f52372e323bf6f6596018b7d968baa45947acc21f9c269be9",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "agent 输出限制、边界验证及恶意例子的非指令限定全部同块。",
+        "rationale_en": "Agent-output constraints, boundary validation and the hostile example’s noninstruction qualification all stay together.",
+        "leading_excerpt": "The fictional agent receives numbered source units and returns proposed group endings. It is allowed to choose",
+        "trailing_excerpt": "n. Its presence tests separation between source material and the instructions controlling the grouping task.\n\n"
+      },
+      {
+        "anchor": "A10",
+        "chunk_index": 17,
+        "chunk_id": "7df11d35c0942b3b2bba0c08f1c38d7cfca70a91d16cb2ed44bf1721b9307ab4",
+        "text_sha256": "883cb74c5590092b7e85914a50193065cd30f755d1846e28158acd4060a4485f",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "失败、重试、回退说明和检查题免责声明完整，但承诺“below”的问题表在后块。",
+        "rationale_en": "Failure, retry, fallback and question-disclaimer framing survive, while the question table promised “below” is outside.",
+        "leading_excerpt": "## 11. Failure Cases and Review Questions\n\nThe fictional review team separates transport failures from content",
+        "trailing_excerpt": "ing this fixture. They are not a labeled retrieval benchmark and do not define acceptable generated answers.\n\n"
+      },
+      {
+        "anchor": "A11",
+        "chunk_index": 19,
+        "chunk_id": "47a686fa14ecb71736782833d588ba42821fd1fcd6349672128d93a689dc9b7c",
+        "text_sha256": "6296e77725a3598629de7d72725ba60d7517d940f8938d2396a5c1b44bdf26e1",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "机械正确性与检索质量的区别及所需证据完整，独立理解充分。",
+        "rationale_en": "The mechanical-versus-retrieval distinction and required evidence form a complete standalone argument.",
+        "leading_excerpt": "The imaginary team concludes that a useful first evaluation should establish mechanical correctness before com",
+        "trailing_excerpt": "ose outcomes require additional evidence gathered through an evaluation designed for the actual application.\n\n"
+      },
+      {
+        "anchor": "A12",
+        "chunk_index": 21,
+        "chunk_id": "a24e80893b499afad54b8b6756acba4277e87727ff8ec55da4d1abaebe4f3f7c",
+        "text_sha256": "445d4ef8e80307077e6b9e23ccab78a9d790fd646bae3092021534c0d07c5e98",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "四条参考条目作者、标题、虚构标记及链接完整，可独立识别。",
+        "rationale_en": "All four entries retain author, title, fictional designation and link and are independently identifiable.",
+        "leading_excerpt": "- **[R1]** Mira Vale and Jonah Reed. *Boundary Decisions in the Aster Archive*. Fictional Aster Working Paper ",
+        "trailing_excerpt": "nds*. Fictional Multimodal Archive Memo 03, 2025. Placeholder: <https://research.example.invalid/aster/R04>.\n\n"
+      }
+    ],
+    "agentic": [
+      {
+        "anchor": "A01",
+        "chunk_index": 6,
+        "chunk_id": "2e351f8c8244df78810b32c4289a6ded32a32a2aa190ce099b8ef227821c0e05",
+        "text_sha256": "c7f1fe11798d2c028d42f5d874956eeda0e254a3810b72ddf398e4adcc3d383b",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "三个切分风险例子主题集中、句子完整，但评估限定与“测试条件”框架在邻块。",
+        "rationale_en": "Three chunking-risk examples are focused and grammatical, but the evaluation and test-condition framing is outside.",
+        "leading_excerpt": "A passage may fit a size limit while separating a definition from its qualification. A table may remain readab",
+        "trailing_excerpt": "t a value. A retrieved sentence may sound authoritative even though its reference is deliberately fabricated. "
+      },
+      {
+        "anchor": "A02",
+        "chunk_index": 17,
+        "chunk_id": "2d74890ed9e247947d0e190cfb7bacb475e967c297ace9b2111dacad26891df0",
+        "text_sha256": "bbf7a6d1e62e8b9a092941028fe5a40d623c61278f81e4c55e5c0e6c85229144",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 5
+        },
+        "rationale_zh": "重复指令的两个角色与位置含义完整，版本变化的后续限定不在块内。",
+        "rationale_en": "Both instruction roles and location meaning survive, but the subsequent version-change qualification is outside.",
+        "leading_excerpt": "Consider two instructions that both begin with “Record the observed state.” The first belongs to a preparation",
+        "trailing_excerpt": "ng is identical, but their locations and purposes differ. A correct source mapping preserves that difference. "
+      },
+      {
+        "anchor": "A03",
+        "chunk_index": 20,
+        "chunk_id": "1ddcdd90f31bdc99eeb280f70c2d94595e0269a8c74aed31a24020a9953a740c",
+        "text_sha256": "972143e3501921617562d6ab2d89a44f496d1cbeb50323277793cdc085ae0b7a",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 3,
+          "context": 3
+        },
+        "rationale_zh": "重复测量与预算取舍相关，但开头“That repetition”缺指代，后续不自动正确的限定在邻块。",
+        "rationale_en": "Coverage repetition and budget tradeoffs relate, but “That repetition” lacks its antecedent and the not-automatically-correct qualification follows elsewhere.",
+        "leading_excerpt": "That repetition must be recognized when measuring coverage: counting every character occurrence would exaggera",
+        "trailing_excerpt": " each unit. A smaller budget produces narrower passages but may force a qualification into a separate result. "
+      },
+      {
+        "anchor": "A04",
+        "chunk_index": 24,
+        "chunk_id": "b2a358484c396dcb2353341fde09f6cc046809e7d01d610555c569ef2b248440",
+        "text_sha256": "9834b9fbfd968661681a769edca05a4e47f70cbec1f38bbdc6b5b5e64a023b66",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 2,
+          "context": 2
+        },
+        "rationale_zh": "只剩字典两个尾部字段和闭括号，缺对象名、chunk_size、解释和代码开头。",
+        "rationale_en": "Only two trailing dictionary fields and a closing brace remain, without the object name, chunk_size, framing or code opening.",
+        "leading_excerpt": "    \"overlap\": 100,\n    \"unit\": \"characters\",\n}\n",
+        "trailing_excerpt": "    \"overlap\": 100,\n    \"unit\": \"characters\",\n}\n"
+      },
+      {
+        "anchor": "A05",
+        "chunk_index": 32,
+        "chunk_id": "e3cebab78e63102dc01105dc00bf3bb152151bb6cdaa4b839a263726e9c89644",
+        "text_sha256": "44164d48511370c77d0e6efb3826b399b2afb15649be00ee73cbd080a7a33b8f",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "两个领域的记录要求和比较主题集中，但缺它们为何用于语义实验的框架。",
+        "rationale_en": "The two domains’ record requirements and comparison are focused, but the reason they illustrate a semantic experiment is absent.",
+        "leading_excerpt": "Supplier catalog maintenance concerns names, identifiers, delivery schedules, and contractual exceptions. Rese",
+        "trailing_excerpt": "ertainty, and competing interpretations. Both activities involve records, but their decision criteria differ. "
+      },
+      {
+        "anchor": "A06",
+        "chunk_index": 41,
+        "chunk_id": "faea966e3261378d2cf0d50d06ee5b92bad456cc9f3d5be2b6cb6b5138b67261",
+        "text_sha256": "672b40a1b21053712b5aac820a8c12eafad9d8bd78ccb3b76c7ca8e465d9ff36",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 4,
+          "context": 1
+        },
+        "rationale_zh": "三条数据行完整且主题集中，完全缺表头和数值列定义，无法判断 22/946/5 的含义。",
+        "rationale_en": "Three complete rows are focused, but headers and numeric definitions are entirely absent, so 22/946/5 cannot be interpreted.",
+        "leading_excerpt": "| AST-02 | Recursive boundaries | 22 | 946 | 5 |\n| AST-03 | Semantic window decisions | 16 | 988 | 9 |\n| AST-0",
+        "trailing_excerpt": "5 |\n| AST-03 | Semantic window decisions | 16 | 988 | 9 |\n| AST-04 | Hierarchical leaf nodes | 41 | 500 | 6 |\n"
+      },
+      {
+        "anchor": "A07",
+        "chunk_index": 44,
+        "chunk_id": "11e546f36d011948845e1a88b1e11648e447cbc1a74954abd4290e3292e68d43",
+        "text_sha256": "42b7dac05674d699bb0575436d85f62267b0aafa8788407c6a5e815fbf0541b1",
+        "ratings": {
+          "coherence": 1,
+          "completeness": 1,
+          "context": 1
+        },
+        "rationale_zh": "仅“## 9. ”编号，主题标题与正文均缺失，独立检索无法理解内容。",
+        "rationale_en": "Only “## 9. ” remains; the topic title and body are missing, leaving no independently useful content.",
+        "leading_excerpt": "## 9. ",
+        "trailing_excerpt": "## 9. "
+      },
+      {
+        "anchor": "A08",
+        "chunk_index": 48,
+        "chunk_id": "67e8d963067ecb3dc5420df6c0c584c078c7bece08ed4a35b794ef4819343cc4",
+        "text_sha256": "9f2e09892bdb8a91d0fdb933f86fdcc3aa7597dd30ee154cc1acc05b04998522",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 4
+        },
+        "rationale_zh": "时间戳和图像能力限制句完整，但“supplied”范围及虚构媒体框架在邻块。",
+        "rationale_en": "Timestamp and image-capability limitations are complete, but supplied bounds and fictional-media framing are outside.",
+        "leading_excerpt": "Splitting a transcript into two strings does not provide new word-level timestamps. Similarly, preserving an i",
+        "trailing_excerpt": "modality test would retain the supplied reference and time bounds instead of inventing finer locations [R4].\n\n"
+      },
+      {
+        "anchor": "A09",
+        "chunk_index": 51,
+        "chunk_id": "c35bc71804ee3cb959f01d3c93a9fb815c6a3de55e87bff1fdfc89a5c5fe8f05",
+        "text_sha256": "e4b64c7c2b76c6a518baee7176b471081622bd6348e5ce873cb504ca9a9918d5",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 4,
+          "context": 4
+        },
+        "rationale_zh": "恶意文本及非指令限定同块；开头 valid group 指代依赖前块，部分完整框架在后块。",
+        "rationale_en": "The hostile text and noninstruction caveat survive; “valid group” depends on prior context and part of the framing follows elsewhere.",
+        "leading_excerpt": "A valid group can still exceed the output budget, in which case the application subdivides it at existing unit",
+        "trailing_excerpt": "r may analyze where that sentence belongs, but the application must not turn it into an operational decision. "
+      },
+      {
+        "anchor": "A10",
+        "chunk_index": 54,
+        "chunk_id": "88f2a52a96b7d8b5ae67bfba27753ad81efee2cab1d454cc7784591d3b348ca0",
+        "text_sha256": "95c1ccdbea78bdaef9bc2c437f947bd942b0f4f8580264152fb73c0c59aa94d3",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 5,
+          "context": 4
+        },
+        "rationale_zh": "显式回退与检查题资格说明完整，但故障背景及模型角色在前块。",
+        "rationale_en": "Explicit-fallback and question qualifications are complete, while failure context and model roles precede the chunk.",
+        "leading_excerpt": "An explicitly selected fallback can produce local recursive chunks, but the result must record that fallback r",
+        "trailing_excerpt": "ing this fixture. They are not a labeled retrieval benchmark and do not define acceptable generated answers.\n\n"
+      },
+      {
+        "anchor": "A11",
+        "chunk_index": 60,
+        "chunk_id": "8734184ac0c18833bcabb57d5fdd9a20ca9b5137aef76dc22a33ee57aa08cc81",
+        "text_sha256": "129a31353bd72b3a33bc2703d8f858ef62984cca971f0447ec22e19432643092",
+        "ratings": {
+          "coherence": 5,
+          "completeness": 5,
+          "context": 5
+        },
+        "rationale_zh": "完整指标、检索效果限定与证据要求同块，句子和指代清楚。",
+        "rationale_en": "Mechanical metrics, retrieval-effect qualifications and evidence requirements stay together with clear sentences and antecedents.",
+        "leading_excerpt": "Complete coverage, valid coordinates, bounded sizes, and explicit relationships make later experiments inspect",
+        "trailing_excerpt": "ose outcomes require additional evidence gathered through an evaluation designed for the actual application.\n\n"
+      },
+      {
+        "anchor": "A12",
+        "chunk_index": 66,
+        "chunk_id": "f47fd22e1befebda081bd52807067b4f28f4173e6d80f85fa2b269fa0b9bb3f3",
+        "text_sha256": "2280953dcb9d0bd53aad8333d799df8e2b7676918521d1ac58bbdee2731e40e7",
+        "ratings": {
+          "coherence": 4,
+          "completeness": 1,
+          "context": 1
+        },
+        "rationale_zh": "只剩引用标题，缺 R3、作者、年份、虚构标记和链接，无法识别完整条目。",
+        "rationale_en": "Only a reference title remains, without R3, authors, year, fictional designation or link, preventing full-entry identification.",
+        "leading_excerpt": "*Neighboring Sentence Windows in Simulated Retrieval Collections*. ",
+        "trailing_excerpt": "*Neighboring Sentence Windows in Simulated Retrieval Collections*. "
+      }
+    ]
+  }
+}

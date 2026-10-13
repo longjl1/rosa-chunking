@@ -1,0 +1,170 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Package version matching an immutable vVERSION tag
+        required: true
+        default: '0.1.0a1'
+        type: string
+      test_only:
+        description: Publish to TestPyPI and verify, without uploading to production
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v${{ inputs.version }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check version against selected tag
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          python - <<'PY'
+          import os, tomllib
+          from pathlib import Path
+          version = tomllib.loads(Path('pyproject.toml').read_text())['project']['version']
+          assert version == os.environ['RELEASE_VERSION'], 'Tag/package version mismatch'
+          assert os.environ['GITHUB_REF'] == f'refs/tags/v{version}', 'Select the matching tag under Use workflow from'
+          PY
+      - run: python -m pip install -e '.[dev]'
+      - run: python -m pytest -q -m 'not integration'
+      - run: ruff check . && ruff format --check . && mypy
+      - run: python -m build && python -m twine check dist/*
+      - run: python scripts/verify_distributions.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-distributions
+          path: dist/
+          if-no-files-found: error
+
+  installed-tests:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12', '3.13', '3.14']
+        extras: [core, providers]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v${{ inputs.version }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-distributions
+          path: dist/
+      - run: python -m pip install pytest
+      - name: Install verified wheel
+        env:
+          EXTRAS: ${{ matrix.extras }}
+        run: |
+          for wheel in dist/*.whl; do
+            if [ "$EXTRAS" = providers ]; then
+              python -m pip install "${wheel}[providers]"
+            else
+              python -m pip install --no-deps "$wheel"
+            fi
+          done
+      - run: python -m pytest -q -m 'not integration'
+      - run: python -I scripts/smoke_install.py
+
+  publish-testpypi:
+    needs: [build, installed-tests]
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/project/rosa-chunking/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-distributions
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          skip-existing: true
+
+  verify-testpypi:
+    needs: publish-testpypi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v${{ inputs.version }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-distributions
+          path: dist/
+      - name: Verify uploaded hashes and install from TestPyPI
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          python scripts/verify_index.py --index testpypi --version "$RELEASE_VERSION"
+          python -m pip install httpx
+          python -m pip install --index-url https://test.pypi.org/simple/ --no-deps "rosa-chunking==$RELEASE_VERSION"
+          python -I scripts/smoke_install.py
+
+  publish-pypi:
+    if: ${{ !inputs.test_only }}
+    needs: verify-testpypi
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/rosa-chunking/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-distributions
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
+
+  verify-pypi:
+    needs: publish-pypi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v${{ inputs.version }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-distributions
+          path: dist/
+      - name: Verify production hashes and installed package
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          python scripts/verify_index.py --index pypi --version "$RELEASE_VERSION"
+          python -m pip install httpx
+          python -m pip install --no-deps "rosa-chunking==$RELEASE_VERSION"
+          python -I scripts/smoke_install.py

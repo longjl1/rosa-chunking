@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rosa-chunking"
+version = "0.1.0a1"
+description = "Six composable RAG chunking strategies with source provenance"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["rag", "chunking", "semantic", "retrieval"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Source = "https://github.com/longjl1/rosa-chunking"
+Issues = "https://github.com/longjl1/rosa-chunking/issues"
+Documentation = "https://github.com/longjl1/rosa-chunking#readme"
+
+[project.optional-dependencies]
+providers = ["httpx>=0.27,<1"]
+dev = ["pytest>=8,<10", "build>=1,<2", "twine>=6,<8", "ruff>=0.9,<1", "mypy>=1.14,<3", "httpx>=0.27,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rosa_chunking"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/docs", "/examples", "/benchmarks", "/scripts", "/README.md", "/CHANGELOG.md", "/LICENSE", "/pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: opt-in real provider requests (may incur charges)"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/rosa_chunking"]
+

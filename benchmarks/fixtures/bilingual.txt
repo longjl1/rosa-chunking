@@ -1,0 +1,11 @@
+RAG pipelines retrieve source context before generating an answer. A chunk should retain its source identity so developers can inspect the retrieved evidence.
+
+Chunk size is a budget, and overlap repeats some source content. A fixed-size baseline makes it possible to compare other strategies on the same corpus.
+
+语义切分可以用相邻句子窗口的向量距离寻找主题边界。模型输出与检索效果应分别验证，不应把切分方式本身当作准确性的证明。
+
+表格需要保留行列关系和表头。图片可以保留原始文件引用。音频和视频片段需要时间范围，转录文字的位置不等于原始媒体中的逐字时间。
+
+Hierarchical chunks expose parent-child relationships. Applications can retrieve small nodes and selectively expand their context using larger parent nodes.
+
+Agentic chunking asks a model to choose boundaries. The application should validate those decisions and extract content directly from the original source.

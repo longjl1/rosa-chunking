@@ -3,8 +3,17 @@
 Six composable chunking strategies for RAG developers, with explicit source provenance.
 Python 3.11+, MIT, zero mandatory runtime dependencies. Version **0.1.0a1** is an alpha API.
 
-**Release status:** this repository is prepared for release; it is not evidence of an upload to PyPI.
-Until published, install locally:
+## Installation
+
+Install the first alpha from [PyPI](https://pypi.org/project/rosa-chunking/):
+
+```bash
+python -m pip install 'rosa-chunking==0.1.0a1'
+# Optional HTTP adapters:
+python -m pip install 'rosa-chunking[providers]==0.1.0a1'
+```
+
+For development, install a local checkout:
 
 ```bash
 python -m pip install .
@@ -202,5 +211,7 @@ Tests normally use local stubs or `httpx.MockTransport`; no model credentials ar
 Real integration tests require all `ROSA_*` settings plus `ROSA_RUN_INTEGRATION=1`:
 `pytest -m integration`. This makes real requests and can incur charges.
 
-See [中文入门](docs/quickstart.zh-CN.md), [publishing](docs/publishing.md),
-[benchmark methodology](benchmarks/README.md), and [changelog](CHANGELOG.md).
+See [中文入门](https://github.com/longjl1/rosa-chunking/blob/main/docs/quickstart.zh-CN.md),
+[publishing](https://github.com/longjl1/rosa-chunking/blob/main/docs/publishing.md),
+[benchmark methodology](https://github.com/longjl1/rosa-chunking/blob/main/benchmarks/README.md),
+and [changelog](https://github.com/longjl1/rosa-chunking/blob/main/CHANGELOG.md).

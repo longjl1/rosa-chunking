@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0a1 — unreleased
+## 0.1.0a1 — 2026-10-13
 
 - Six synchronous strategies: fixed, recursive, semantic, hierarchical, modality, agentic.
 - JSON dataclasses, stable local chunk IDs and Unicode source spans.

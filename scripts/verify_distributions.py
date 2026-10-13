@@ -93,7 +93,6 @@ def main() -> None:
                 "-m",
                 "build",
                 "--wheel",
-                "--no-isolation",
                 "--outdir",
                 str(rebuilt),
                 str(source_root),
